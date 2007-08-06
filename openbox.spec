@@ -1,6 +1,6 @@
 %define name      openbox
 %define version   3.3.1
-%define release   %mkrel 1
+%define release   %mkrel 2
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -91,10 +91,10 @@ maintained, and contributed to by these individuals.
 %__cat > %buildroot%_sysconfdir/X11/wmsession.d/25openbox << EOF
 NAME=Openbox
 ICON=%_datadir/pixmaps/openbox.png
-EXEC=%_Xbindir/startopenbox
+EXEC=%_bindir/startopenbox
 DESC=%Summary
 SCRIPT:
-exec %_Xbindir/startopenbox
+exec %_bindir/startopenbox
 EOF
 
 %__mkdir -p %buildroot%_bindir

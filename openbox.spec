@@ -1,6 +1,6 @@
 %define name      openbox
-%define version   3.3.1
-%define release   %mkrel 2
+%define version   3.4.4
+%define release   %mkrel 1
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -15,7 +15,9 @@ Group:            Graphical desktop/Other
 License:          BSD
 URL:              http://www.icculus.org/openbox/
 Source:           %name-%version.tar.bz2
-
+Patch0:           01_rc.xml.dpatch
+Patch1:           02_fix_freedesktop_compliance.dpatch
+Patch2:           03_fix_crash-by-combined-client-list-menu.dpatch
 Buildrequires:   XFree86-devel
 Buildrequires:   glib2-devel
 BuildRequires:   libxml2-devel
@@ -70,6 +72,10 @@ maintained, and contributed to by these individuals.
 
 %prep
 %setup -q
+
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %define __libtoolize /bin/true
@@ -132,7 +138,10 @@ EOF
 
 #%_menudir/%name
 
-%_datadir/%name
+#%_datadir/%name
+%{_datadir}/man/man1/*
+%{_datadir}/xsessions/*
+
 %_datadir/gnome/wm-properties/*
 %_datadir/pixmaps/*
 %_datadir/themes/*

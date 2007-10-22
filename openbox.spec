@@ -21,6 +21,7 @@ Patch2:           03_fix_crash-by-combined-client-list-menu.dpatch
 Buildrequires:   XFree86-devel
 Buildrequires:   glib2-devel
 BuildRequires:   libxml2-devel
+BuildRequires:   pango-devel
 Requires:        xsetroot
 
 BuildRoot:        %_tmppath/%name-%{version}

@@ -18,7 +18,7 @@ Source:           %name-%version.tar.bz2
 Patch0:           01_rc.xml.dpatch
 Patch1:           02_fix_freedesktop_compliance.dpatch
 Patch2:           03_fix_crash-by-combined-client-list-menu.dpatch
-Buildrequires:   XFree86-devel
+Buildrequires:   X11-devel
 Buildrequires:   glib2-devel
 BuildRequires:   libxml2-devel
 BuildRequires:   pango-devel

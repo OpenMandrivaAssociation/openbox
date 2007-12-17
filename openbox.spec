@@ -24,7 +24,6 @@ BuildRequires:   libxml2-devel
 BuildRequires:   pango-devel
 Requires:        xsetroot
 
-BuildRoot:        %_tmppath/%name-%{version}
 
 %description
 Openbox is a window manager for the X11 windowing system.

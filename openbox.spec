@@ -1,11 +1,12 @@
 %define name      openbox
-%define version   3.4.4
+%define version   3.4.6.1
 %define release   %mkrel 1
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
-%define major 1
+%define major 16
 %define libname %mklibname %name %major
+%define develname %mklibname -d %name
 
 Summary:          %Summary
 Name:             %name
@@ -14,10 +15,9 @@ Release:          %release
 Group:            Graphical desktop/Other
 License:          BSD
 URL:              http://www.icculus.org/openbox/
-Source:           %name-%version.tar.bz2
+Source:           http://icculus.org/openbox/releases/%name-%version.tar.gz
 Patch0:           01_rc.xml.dpatch
 Patch1:           02_fix_freedesktop_compliance.dpatch
-Patch2:           03_fix_crash-by-combined-client-list-menu.dpatch
 Buildrequires:   X11-devel
 Buildrequires:   glib2-devel
 BuildRequires:   libxml2-devel
@@ -53,14 +53,15 @@ Being overall pleased with the window manager, but feeling left unable
 to contribute, this project was born.The Openbox project is developed,
 maintained, and contributed to by these individuals.
 
-%package -n %libname-devel
+%package -n %develname
 Summary: Development files from openbox
 Group: Development/Other
 Requires: %libname = %version-%release
 Provides: lib%name-devel = %version-%release
 Provides: %name-devel = %version-%release
+Obsoletes: %mklibname -d openbox 1
 
-%description -n %libname-devel
+%description -n %develname
 Openbox is a window manager for the X11 windowing system.
 It currently runs on a large list of platforms. It was originally
 based on blackbox and currently remains very similar, even using
@@ -76,7 +77,6 @@ maintained, and contributed to by these individuals.
 
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %define __libtoolize /bin/true
@@ -149,15 +149,12 @@ EOF
 
 %files -n %libname
 %defattr(-,root,root)
-%_libdir/*.so.*
+%_libdir/*.so.%{major}*
 
-%files -n %libname-devel
+%files -n %develname
 %defattr(-,root,root)
 %_libdir/pkgconfig/*.pc
 %_libdir/*.so
 %_libdir/*.la
 %_libdir/*.a
 %_includedir/%name
-
-
-

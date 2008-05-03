@@ -1,10 +1,10 @@
 %define name      openbox
-%define version   3.4.6.1
+%define version   3.4.7.2
 %define release   %mkrel 1
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
-%define major 16
+%define major 21
 %define libname %mklibname %name %major
 %define develname %mklibname -d %name
 
@@ -81,10 +81,7 @@ maintained, and contributed to by these individuals.
 %build
 %define __libtoolize /bin/true
 
-%configure2_5x \
-                --enable-kde \
-                --enable-xinerama
-
+%configure2_5x
 %make DEFAULT_MENU=%_sysconfdir/xdg/openbox/menu.xml
 
 
@@ -136,10 +133,7 @@ EOF
 
 %dir %_sysconfdir/xdg/%name
 %config(noreplace) %_sysconfdir/xdg/%name/*
-
-#%_menudir/%name
-
-#%_datadir/%name
+%{_libdir}/openbox/xdg-autostart
 %{_datadir}/man/man1/*
 %{_datadir}/xsessions/*
 

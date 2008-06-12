@@ -110,11 +110,9 @@ EOF
 %find_lang %name
 
 %post
-#{update_menus}
 %make_session
 
 %postun
-#clean_menus
 %make_session
 
 %if %mdkversion < 200900

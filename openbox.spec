@@ -1,6 +1,6 @@
 %define name      openbox
 %define version   3.4.7.2
-%define release   %mkrel 2
+%define release   %mkrel 3
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -76,10 +76,12 @@ maintained, and contributed to by these individuals.
 %setup -q
 
 %patch0 -p1
-%patch1 -p1
+%patch1 -p1 -b .fixdesktop
+
+#needed by patch1
+autoreconf
 
 %build
-%define __libtoolize /bin/true
 
 %configure2_5x
 %make DEFAULT_MENU=%_sysconfdir/xdg/openbox/menu.xml
@@ -139,7 +141,7 @@ EOF
 %{_datadir}/man/man1/*
 %{_datadir}/xsessions/*
 
-%_datadir/gnome/wm-properties/*
+%_datadir/applications/*
 %_datadir/pixmaps/*
 %_datadir/themes/*
 

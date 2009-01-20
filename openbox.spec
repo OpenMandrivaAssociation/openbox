@@ -147,7 +147,7 @@ EOF
 %{_datadir}/man/man1/*
 %{_datadir}/xsessions/*
 
-%_datadir/applications/*
+%_datadir/gnome/wm-properties/openbox.desktop
 %_datadir/pixmaps/*
 %_datadir/themes/*
 

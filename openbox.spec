@@ -18,6 +18,8 @@ URL:              http://www.icculus.org/openbox/
 Source:           http://icculus.org/openbox/releases/%name-%version.tar.gz
 Patch0:           01_rc.xml.dpatch
 Patch1:           02_fix_freedesktop_compliance.dpatch
+Patch2:           03_nextprev-xinerama.dpatch
+Patch3:           04_escape_session_names.dpatch
 Buildrequires:   X11-devel
 Buildrequires:   glib2-devel
 BuildRequires:   libxml2-devel
@@ -75,8 +77,10 @@ maintained, and contributed to by these individuals.
 %prep
 %setup -q
 
-%patch0 -p1
+%patch0 -p0
 %patch1 -p1 -b .fixdesktop
+%patch2 -p1
+%patch3 -p1
 
 #needed by patch1
 autoreconf

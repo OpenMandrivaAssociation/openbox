@@ -1,3 +1,5 @@
+%define Werror_cflags %nil
+
 %define name      openbox
 %define version   3.4.7.2
 %define release   %mkrel 4

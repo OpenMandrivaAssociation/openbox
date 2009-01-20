@@ -1,6 +1,6 @@
 %define name      openbox
 %define version   3.4.7.2
-%define release   %mkrel 3
+%define release   %mkrel 4
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -94,7 +94,7 @@ autoreconf
 
 # session file
 %__mkdir -p %buildroot%_sysconfdir/X11/wmsession.d
-%__cat > %buildroot%_sysconfdir/X11/wmsession.d/25openbox << EOF
+%__cat > %buildroot%_sysconfdir/X11/wmsession.d/26openbox << EOF
 NAME=Openbox
 ICON=%_datadir/pixmaps/openbox.png
 EXEC=%_bindir/startopenbox
@@ -133,7 +133,7 @@ EOF
 %attr(755,root,root) %_bindir/*
 
 #%config(noreplace) %_sysconfdir/menu-methods/%name
-%config(noreplace) %_sysconfdir/X11/wmsession.d/25%name
+%config(noreplace) %_sysconfdir/X11/wmsession.d/26%name
 
 %dir %_sysconfdir/xdg/%name
 %config(noreplace) %_sysconfdir/xdg/%name/*

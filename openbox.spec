@@ -2,7 +2,7 @@
 
 %define name      openbox
 %define version   3.4.7.2
-%define release   %mkrel 4
+%define release   %mkrel 5
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -22,10 +22,12 @@ Patch0:           01_rc.xml.dpatch
 Patch1:           02_fix_freedesktop_compliance.dpatch
 Patch2:           03_nextprev-xinerama.dpatch
 Patch3:           04_escape_session_names.dpatch
+Patch4:           05_use_lib_not_libexec.patch
 Buildrequires:   X11-devel
 Buildrequires:   glib2-devel
 BuildRequires:   libxml2-devel
 BuildRequires:   pango-devel
+BuildRequires:   gettext-devel
 Requires:        xsetroot
 
 BuildRoot:        %_tmppath/%name-%{version}
@@ -83,9 +85,10 @@ maintained, and contributed to by these individuals.
 %patch1 -p1 -b .fixdesktop
 %patch2 -p1
 %patch3 -p1
+%patch4 -p0
 
 #needed by patch1
-autoreconf
+autoreconf -f -i
 
 %build
 

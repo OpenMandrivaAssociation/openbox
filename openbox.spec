@@ -22,7 +22,7 @@ Patch0:           01_rc.xml.dpatch
 Patch1:           02_fix_freedesktop_compliance.dpatch
 Patch2:           03_nextprev-xinerama.dpatch
 Patch3:           04_escape_session_names.dpatch
-Patch4:           05_use_lib_not_libexec.patch
+Patch4:           05_fix_gnome-settings-daemon_path.patch
 Buildrequires:   X11-devel
 Buildrequires:   glib2-devel
 BuildRequires:   libxml2-devel

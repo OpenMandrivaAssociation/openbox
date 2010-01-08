@@ -1,7 +1,7 @@
 %define Werror_cflags %nil
 
 %define name      openbox
-%define version   3.4.9
+%define version   3.4.10
 %define release   %mkrel 1
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code

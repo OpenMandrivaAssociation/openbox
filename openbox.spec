@@ -17,7 +17,7 @@ Release:          %release
 Group:            Graphical desktop/Other
 License:          BSD
 URL:              http://openbox.org/
-Source:           http://icculus.org/openbox/releases/%name-%version.tar.gz
+Source:           http://openbox.org/dist/openbox/%name-%version.tar.gz
 Patch0:           01_rc.xml.dpatch
 Patch1:           02_fix_freedesktop_compliance.dpatch
 Patch4:           05_fix_gnome-settings-daemon_path.patch

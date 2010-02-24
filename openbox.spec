@@ -115,6 +115,7 @@ EOF
 
 %__mkdir -p %buildroot%_bindir
 cat > %buildroot%_bindir/start%name <<EOF
+#!/bin/sh
 %_bindir/xsetroot -solid Black
 exec %_bindir/openbox-session
 EOF

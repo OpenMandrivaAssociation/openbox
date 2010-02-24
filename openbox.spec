@@ -2,7 +2,7 @@
 
 %define name      openbox
 %define version   3.4.11
-%define release   %mkrel 1
+%define release   %mkrel 2
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -111,7 +111,7 @@ EOF
 %__mkdir -p %buildroot%_bindir
 cat > %buildroot%_bindir/start%name <<EOF
 %_bindir/xsetroot -solid Black
-exec %_bindir/openbox
+exec %_bindir/openbox-session
 EOF
 
 %find_lang %name

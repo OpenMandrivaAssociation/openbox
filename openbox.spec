@@ -1,6 +1,6 @@
 %define name      openbox
-%define version   3.4.11
-%define release   %mkrel 2
+%define version   3.4.11.1
+%define release   %mkrel 1
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -18,13 +18,6 @@ URL:              http://openbox.org/
 Source:           http://openbox.org/dist/openbox/%name-%version.tar.gz
 # run gnome-screenshot when hitting printscreen
 Patch0:           01_rc.xml.dpatch
-# patch sent upstream : http://bugzilla.icculus.org/show_bug.cgi?id=4557 
-Patch1:           02_fix_freedesktop_compliance.dpatch
-# patch sent upstream : http://bugzilla.icculus.org/show_bug.cgi?id=4556
-Patch4:           05_fix_gnome-settings-daemon_path.patch
-# patch to correct format string vulnerability
-# already applied upstream : fa0ae17a
-Patch5:           openbox-3.4.11_fix_format_sting.patch 
 Buildrequires:   X11-devel
 Buildrequires:   glib2-devel
 BuildRequires:   libxml2-devel
@@ -84,12 +77,6 @@ maintained, and contributed to by these individuals.
 %prep
 %setup -q
 %patch0 -p0
-%patch1 -p1 -b .fixdesktop
-%patch4 -p0
-%patch5 -p0 
-
-#needed by patch1
-autoreconf -f -i
 
 %build
 

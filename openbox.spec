@@ -1,6 +1,6 @@
 %define name      openbox
 %define version   3.4.11.2
-%define release   %mkrel 1
+%define release   %mkrel 2
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -25,6 +25,7 @@ BuildRequires:   pango-devel
 BuildRequires:   gettext-devel
 BuildRequires:   startup-notification-devel >= 0.8
 Requires:        xsetroot
+Suggests:        obconf
 
 BuildRoot:        %_tmppath/%name-%{version}
 

@@ -1,6 +1,6 @@
 %define name      openbox
 %define version   3.4.11.2
-%define release   %mkrel 2
+%define release   %mkrel 3
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -18,7 +18,10 @@ URL:              http://openbox.org/
 Source:           http://openbox.org/dist/openbox/%name-%version.tar.gz
 # run gnome-screenshot when hitting printscreen
 Patch0:           01_rc.xml.dpatch
-Buildrequires:   X11-devel
+BuildRequires:   libxext-devel
+BuildRequires:   libxrandr-devel
+BuildRequires:   libxinerama-devel
+BuildRequires:   libxcursor-devel
 Buildrequires:   glib2-devel
 BuildRequires:   libxml2-devel
 BuildRequires:   pango-devel

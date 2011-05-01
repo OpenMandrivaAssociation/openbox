@@ -1,6 +1,6 @@
 %define name      openbox
 %define version   3.4.11.2
-%define release   %mkrel 3
+%define release   %mkrel 4
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -16,6 +16,7 @@ Group:            Graphical desktop/Other
 License:          BSD
 URL:              http://openbox.org/
 Source:           http://openbox.org/dist/openbox/%name-%version.tar.gz
+Source1:	  http://www.deviantart.com/download/162079452/Elementary_Openbox_by_mirhciulica.zip
 # run gnome-screenshot when hitting printscreen
 Patch0:           01_rc.xml.dpatch
 BuildRequires:   libxext-devel
@@ -79,19 +80,19 @@ to contribute, this project was born.The Openbox project is developed,
 maintained, and contributed to by these individuals.
 
 %prep
-%setup -q
+%setup -q -a1
 %patch0 -p0
 
 %build
-
 %configure2_5x
 %make DEFAULT_MENU=%_sysconfdir/xdg/openbox/menu.xml
-
 
 %install
 %__rm -rf %buildroot
 
 %makeinstall_std
+
+cp -fr Elementary-Openbox %buildroot/%_datadir/themes/elementary
 
 # session file
 %__mkdir -p %buildroot%_sysconfdir/X11/wmsession.d

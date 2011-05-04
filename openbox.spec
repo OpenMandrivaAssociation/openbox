@@ -1,6 +1,6 @@
 %define name      openbox
 %define version   3.4.11.2
-%define release   %mkrel 4
+%define release   %mkrel 5
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
@@ -17,6 +17,7 @@ License:          BSD
 URL:              http://openbox.org/
 Source:           http://openbox.org/dist/openbox/%name-%version.tar.gz
 Source1:	  http://www.deviantart.com/download/162079452/Elementary_Openbox_by_mirhciulica.zip
+Source2:	  oxygen.tar.gz
 # run gnome-screenshot when hitting printscreen
 Patch0:           01_rc.xml.dpatch
 BuildRequires:   libxext-devel
@@ -30,6 +31,8 @@ BuildRequires:   gettext-devel
 BuildRequires:   startup-notification-devel >= 0.8
 Requires:        xsetroot
 Suggests:        obconf
+#If we are using patch for gnome-screenshot we are need suggest gnome-utils
+Suggests:		 gnome-utils
 
 BuildRoot:        %_tmppath/%name-%{version}
 
@@ -80,7 +83,7 @@ to contribute, this project was born.The Openbox project is developed,
 maintained, and contributed to by these individuals.
 
 %prep
-%setup -q -a1
+%setup -q -a1 -a2
 %patch0 -p0
 
 %build
@@ -93,6 +96,7 @@ maintained, and contributed to by these individuals.
 %makeinstall_std
 
 cp -fr Elementary-Openbox %buildroot/%_datadir/themes/elementary
+cp -fr oxygen %buildroot/%_datadir/themes/oxygen
 
 # session file
 %__mkdir -p %buildroot%_sysconfdir/X11/wmsession.d

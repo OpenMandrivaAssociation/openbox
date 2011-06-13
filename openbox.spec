@@ -16,8 +16,6 @@ Group:            Graphical desktop/Other
 License:          BSD
 URL:              http://openbox.org/
 Source:           http://openbox.org/dist/openbox/%name-%version.tar.gz
-#Source1:	  http://www.deviantart.com/download/162079452/Elementary_Openbox_by_mirhciulica.zip
-#Source2:	  oxygen.tar.gz
 # run gnome-screenshot when hitting printscreen
 Patch0:           01_rc.xml.dpatch
 BuildRequires:   libxext-devel
@@ -94,9 +92,6 @@ maintained, and contributed to by these individuals.
 %__rm -rf %buildroot
 
 %makeinstall_std
-
-cp -fr Elementary-Openbox %buildroot/%_datadir/themes/elementary
-cp -fr oxygen %buildroot/%_datadir/themes/oxygen
 
 # session file
 %__mkdir -p %buildroot%_sysconfdir/X11/wmsession.d

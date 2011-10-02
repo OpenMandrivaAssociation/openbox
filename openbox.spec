@@ -1,10 +1,11 @@
 %define name      openbox
-%define version   3.4.11.2
-%define release   %mkrel 7
+%define version   3.5.0
+%define release   %mkrel 1
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 
-%define major 21
+%define major 27
+%define obtmajor 0
 %define libname %mklibname %name %major
 %define develname %mklibname -d %name
 
@@ -17,7 +18,8 @@ License:          BSD
 URL:              http://openbox.org/
 Source:           http://openbox.org/dist/openbox/%name-%version.tar.gz
 # run gnome-screenshot when hitting printscreen
-Patch0:           01_rc.xml.dpatch
+Patch0:          01_rc.xml.dpatch
+Patch1:			 openbox-3.5.0-link.patch
 BuildRequires:   libxext-devel
 BuildRequires:   libxrandr-devel
 BuildRequires:   libxinerama-devel
@@ -27,10 +29,8 @@ BuildRequires:   libxml2-devel
 BuildRequires:   pango-devel
 BuildRequires:   gettext-devel
 BuildRequires:   startup-notification-devel >= 0.8
-Requires:        xsetroot
-Suggests:        obconf
-#If we are using patch for gnome-screenshot we are need suggest gnome-utils
-Suggests:		 gnome-utils
+Requires:        xsetroot elementary-theme
+Suggests:        obconf 
 
 BuildRoot:        %_tmppath/%name-%{version}
 
@@ -83,8 +83,10 @@ maintained, and contributed to by these individuals.
 %prep
 %setup -q
 %patch0 -p0
+%patch1 -p0
 
 %build
+autoreconf -fi
 %configure2_5x
 %make DEFAULT_MENU=%_sysconfdir/xdg/openbox/menu.xml
 
@@ -113,17 +115,7 @@ EOF
 
 %find_lang %name
 
-%if %mdkversion < 200900
-%post
-%make_session
-
-%postun
-%make_session
-
-%post -n %libname -p /sbin/ldconfig
-
-%postun -n %libname -p /sbin/ldconfig
-%endif
+find %buildroot -name *.la | xargs rm
 
 %clean
 %__rm -rf %buildroot
@@ -138,7 +130,8 @@ EOF
 
 %dir %_sysconfdir/xdg/%name
 %config(noreplace) %_sysconfdir/xdg/%name/*
-%{_libdir}/openbox/xdg-autostart
+%_libexecdir/openbox-autostart
+%_libexecdir/openbox-xdg-autostart
 %{_datadir}/man/man1/*
 %{_datadir}/xsessions/*
 
@@ -150,11 +143,13 @@ EOF
 %files -n %libname
 %defattr(-,root,root)
 %_libdir/*.so.%{major}*
+%defattr(-,root,root)
+%_libdir/libobt.so.%{obtmajor}
+%_libdir/libobt.so.%{obtmajor}.*
 
 %files -n %develname
 %defattr(-,root,root)
 %_libdir/pkgconfig/*.pc
 %_libdir/*.so
-%_libdir/*.la
 %_libdir/*.a
 %_includedir/%name

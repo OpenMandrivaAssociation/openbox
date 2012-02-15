@@ -27,6 +27,7 @@ BuildRequires:   libxcursor-devel
 Buildrequires:   glib2-devel
 BuildRequires:   libxml2-devel
 BuildRequires:   pango-devel
+BuildRequires:	 pkgconfig(pangoxft)
 BuildRequires:   gettext-devel
 BuildRequires:   startup-notification-devel >= 0.8
 Requires:        xsetroot

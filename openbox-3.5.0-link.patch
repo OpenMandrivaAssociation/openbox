@@ -1,0 +1,36 @@
+--- obrender/obrender-3.5.pc.in.orig	2011-08-12 16:42:09.000000000 +0200
++++ obrender/obrender-3.5.pc.in	2011-08-12 16:43:13.000000000 +0200
+@@ -10,5 +10,5 @@
+ Description: Openbox Render Library
+ Version: @RR_VERSION@
+ Requires: obt-3.5 glib-2.0 xft pangoxft @PKG_CONFIG_IMLIB@
+-Libs: -L${libdir} -lobrender ${xlibs}
++Libs: -L${libdir} -lobrender
+ Cflags: -I${includedir}/openbox/@RR_VERSION@ ${xcflags}
+--- obt/obt-3.5.pc.in.orig	2011-08-12 16:43:25.000000000 +0200
++++ obt/obt-3.5.pc.in	2011-08-12 16:43:40.000000000 +0200
+@@ -10,5 +10,5 @@
+ Description: Openbox Toolkit Library
+ Version: @OBT_VERSION@
+ Requires: glib-2.0 libxml-2.0
+-Libs: -L${libdir} -lobt ${xlibs}
++Libs: -L${libdir} -lobt
+ Cflags: -I${includedir}/openbox/@OBT_VERSION@ ${xcflags}
+--- Makefile.am.link	2011-08-02 13:18:55.000000000 +0200
++++ Makefile.am	2011-08-02 13:21:38.000000000 +0200
+@@ -79,6 +79,7 @@
+ obrender_libobrender_la_LDFLAGS = \
+ 	-version-info $(RR_CURRENT):$(RR_REVISION):$(RR_AGE)
+ obrender_libobrender_la_LIBADD = \
++	obt/libobt.la \
+ 	$(X_LIBS) \
+ 	$(PANGO_LIBS) \
+ 	$(GLIB_LIBS) \
+@@ -124,6 +125,7 @@
+ obt_libobt_la_LDFLAGS = \
+ 	-version-info $(OBT_CURRENT):$(OBT_REVISION):$(OBT_AGE)
+ obt_libobt_la_LIBADD = \
++	$(X_LIBS) \
+ 	$(XINERAMA_LIBS) \
+ 	$(XKB_LIBS) \
+ 	$(XRANDR_LIBS) \

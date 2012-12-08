@@ -1,0 +1,77 @@
+--- openbox-3.5.0.orig/data/rc.xml	2011-08-02 00:14:58.000000000 +0400
++++ openbox-3.5.0/data/rc.xml	2012-04-13 07:18:21.763874307 +0400
+@@ -49,7 +49,7 @@
+ </placement>
+ 
+ <theme>
+-  <name>Clearlooks</name>
++  <name>rosa-elementary</name>
+   <titleLayout>NLIMC</titleLayout>
+   <!--
+       available characters are NDSLIMC, each can occur at most once.
+@@ -64,8 +64,8 @@
+   <keepBorder>yes</keepBorder>
+   <animateIconify>yes</animateIconify>
+   <font place="ActiveWindow">
+-    <name>sans</name>
+-    <size>8</size>
++    <name>Droid Sans</name>
++    <size>10</size>
+     <!-- font size in points -->
+     <weight>bold</weight>
+     <!-- 'bold' or 'normal' -->
+@@ -73,8 +73,8 @@
+     <!-- 'italic' or 'normal' -->
+   </font>
+   <font place="InactiveWindow">
+-    <name>sans</name>
+-    <size>8</size>
++    <name>Droid Sans</name>
++    <size>10</size>
+     <!-- font size in points -->
+     <weight>bold</weight>
+     <!-- 'bold' or 'normal' -->
+@@ -82,8 +82,8 @@
+     <!-- 'italic' or 'normal' -->
+   </font>
+   <font place="MenuHeader">
+-    <name>sans</name>
+-    <size>9</size>
++    <name>Droid Sans</name>
++    <size>10</size>
+     <!-- font size in points -->
+     <weight>normal</weight>
+     <!-- 'bold' or 'normal' -->
+@@ -91,8 +91,8 @@
+     <!-- 'italic' or 'normal' -->
+   </font>
+   <font place="MenuItem">
+-    <name>sans</name>
+-    <size>9</size>
++    <name>Droid Sans</name>
++    <size>10</size>
+     <!-- font size in points -->
+     <weight>normal</weight>
+     <!-- 'bold' or 'normal' -->
+@@ -100,8 +100,8 @@
+     <!-- 'italic' or 'normal' -->
+   </font>
+   <font place="ActiveOnScreenDisplay">
+-    <name>sans</name>
+-    <size>9</size>
++    <name>Droid Sans</name>
++    <size>10</size>
+     <!-- font size in points -->
+     <weight>bold</weight>
+     <!-- 'bold' or 'normal' -->
+@@ -109,8 +109,8 @@
+     <!-- 'italic' or 'normal' -->
+   </font>
+   <font place="InactiveOnScreenDisplay">
+-    <name>sans</name>
+-    <size>9</size>
++    <name>Droid Sans</name>
++    <size>10</size>
+     <!-- font size in points -->
+     <weight>bold</weight>
+     <!-- 'bold' or 'normal' -->

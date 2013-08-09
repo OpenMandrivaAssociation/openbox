@@ -87,7 +87,7 @@ SCRIPT:
 exec %{_bindir}/startopenbox
 EOF
 
-mkdir -p %{buildroot}%{_bindir
+mkdir -p %{buildroot}%{_bindir}
 cat > %{buildroot}%{_bindir}/start%{name} <<EOF
 #!/bin/sh
 %{_bindir}/xsetroot -solid Black
@@ -104,7 +104,7 @@ EOF
 %config(noreplace) %{_sysconfdir}/xdg/%{name}/*
 %{_libexecdir}/openbox-autostart
 %{_libexecdir}/openbox-xdg-autostart
-%{_datadir}/man/man1/*
+%{_mandir}/man1/*
 %{_datadir}/xsessions/*
 
 %{_datadir}/gnome/wm-properties/openbox.desktop

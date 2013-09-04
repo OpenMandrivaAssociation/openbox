@@ -1,2 +1,4 @@
+removed_sources:
+  openbox-3.5.0.tar.gz: 3c3b8d2bc4f4e229871254e92d6b18639be00302
 sources:
-  "openbox-3.5.0.tar.gz": 3c3b8d2bc4f4e229871254e92d6b18639be00302
+  openbox-3.5.2.tar.gz: 6573516107f8cdb83842aac25a430e3f9f966bad

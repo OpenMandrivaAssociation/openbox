@@ -1,19 +1,19 @@
-%define major 27
-%define obtmajor 0
+%define major 29
+%define obtmajor 2
 %define libobrender %mklibname obrender %{major}
 %define libobt %mklibname obt %{obtmajor}
 %define devname %mklibname -d %{name}
 
 Summary:	Windowmanager based on the original blackbox-code
 Name:		openbox
-Version:	3.5.0
-Release:	8
+Version:	3.5.2
+Release:	1
 Group:		Graphical desktop/Other
 License:	BSD
 Url:		http://openbox.org/
 Source0:	http://openbox.org/dist/openbox/%{name}-%{version}.tar.gz
 Patch0:		openbox-3.5.0-mandriva_customisation.patch
-Patch1:		openbox-3.5.0-link.patch
+Patch1:		openbox-3.5.2-unused-libs.patch
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libstartup-notification-1.0)
@@ -106,7 +106,7 @@ EOF
 %{_libexecdir}/openbox-xdg-autostart
 %{_mandir}/man1/*
 %{_datadir}/xsessions/*
-
+%{_datadir}/gnome-session/sessions/openbox-*.session
 %{_datadir}/gnome/wm-properties/openbox.desktop
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*

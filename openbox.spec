@@ -1,7 +1,7 @@
 %define name      openbox
 %define version   3.5.0
 %define subrel 1
-%define release   7
+%define release   8
 %define title     Openbox
 %define Summary   Windowmanager based on the original blackbox-code
 

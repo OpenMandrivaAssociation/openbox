@@ -5,7 +5,7 @@
  
  <theme>
 -  <name>Clearlooks</name>
-+  <name>rosa-elementary</name>
++  <name>oxygen</name>
    <titleLayout>NLIMC</titleLayout>
    <!--
        available characters are NDSLIMC, each can occur at most once.

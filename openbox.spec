@@ -7,13 +7,16 @@
 Summary:	Windowmanager based on the original blackbox-code
 Name:		openbox
 Version:	3.5.2
-Release:	8
+Release:	9
 Group:		Graphical desktop/Other
 License:	BSD
 Url:		http://openbox.org/
 Source0:	http://openbox.org/dist/openbox/%{name}-%{version}.tar.gz
 Patch0:		openbox-3.5.0-mandriva_customisation.patch
 Patch1:		openbox-3.5.2-unused-libs.patch
+# oxygen-theme here:
+# http://box-look.org/content/show.php?content=145240
+Source1:	http://box-look.org/CONTENT/content-files/145240-Oxynew.obt
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libstartup-notification-1.0)
@@ -23,9 +26,8 @@ BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xrandr)
 BuildRequires:	pkgconfig(xinerama)
 BuildRequires:	pkgconfig(xcursor)
-Requires:	xsetroot 
-Suggests:	obconf 
-Suggests:	rosa-elementary-theme
+Requires:	xsetroot
+Suggests:	obconf
 
 %description
 Openbox is a window manager for the X11 windowing system.
@@ -75,6 +77,9 @@ autoreconf -fi
 
 %install
 %makeinstall_std
+
+mkdir -p %{buildroot}%{_datadir}/themes/oxygen/openbox-3/
+install -m 0644 Oxynew/openbox-3/*.xbm Oxynew/openbox-3/themerc %{buildroot}%{_datadir}/themes/oxygen/openbox-3/
 
 # session file
 mkdir -p %{buildroot}%{_sysconfdir}/X11/wmsession.d

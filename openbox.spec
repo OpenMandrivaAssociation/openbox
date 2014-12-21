@@ -67,7 +67,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package includes the development files for %{name}.
 
 %prep
-%setup -q
+%setup -q -a1
 %apply_patches
 autoreconf -fi
 

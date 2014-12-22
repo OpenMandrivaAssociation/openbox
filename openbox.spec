@@ -7,7 +7,7 @@
 Summary:	Windowmanager based on the original blackbox-code
 Name:		openbox
 Version:	3.5.2
-Release:	9
+Release:	10
 Group:		Graphical desktop/Other
 License:	BSD
 Url:		http://openbox.org/
@@ -26,6 +26,9 @@ BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xrandr)
 BuildRequires:	pkgconfig(xinerama)
 BuildRequires:	pkgconfig(xcursor)
+BuildRequires:	pkgconfig(librsvg-2.0)
+BuildRequires:	pkgconfig(imlib2)
+BuildRequires:	pkgconfig(sm)
 Requires:	xsetroot
 Suggests:	obconf
 

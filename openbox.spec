@@ -7,7 +7,7 @@
 Summary:	Windowmanager based on the original blackbox-code
 Name:		openbox
 Version:	3.5.2
-Release:	10
+Release:	11
 Group:		Graphical desktop/Other
 License:	BSD
 Url:		http://openbox.org/
@@ -73,9 +73,10 @@ This package includes the development files for %{name}.
 %setup -q -a1
 %apply_patches
 autoreconf -fi
+2to3 -w data/autostart/openbox-xdg-autostart tools/themeupdate/themeupdate.py
 
 %build
-%configure2_5x --disable-static
+%configure --disable-static
 %make DEFAULT_MENU=%{_sysconfdir}/xdg/openbox/menu.xml
 
 %install
@@ -130,4 +131,3 @@ EOF
 %{_libdir}/pkgconfig/*.pc
 %{_libdir}/*.so
 %{_includedir}/%{name}
-

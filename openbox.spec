@@ -7,7 +7,7 @@
 Summary:	Windowmanager based on the original blackbox-code
 Name:		openbox
 Version:	3.6
-Release:	2
+Release:	3
 Group:		Graphical desktop/Other
 License:	BSD
 Url:		http://openbox.org/
@@ -85,17 +85,6 @@ autoreconf -fi
 mkdir -p %{buildroot}%{_datadir}/themes/oxygen/openbox-3/
 install -m 0644 Oxynew/openbox-3/*.xbm Oxynew/openbox-3/themerc %{buildroot}%{_datadir}/themes/oxygen/openbox-3/
 
-# session file
-mkdir -p %{buildroot}%{_sysconfdir}/X11/wmsession.d
-cat > %{buildroot}%{_sysconfdir}/X11/wmsession.d/26openbox << EOF
-NAME=Openbox
-ICON=%{_datadir}/pixmaps/openbox.png
-EXEC=%{_bindir}/startopenbox
-DESC=%Summary
-SCRIPT:
-exec %{_bindir}/startopenbox
-EOF
-
 mkdir -p %{buildroot}%{_bindir}
 cat > %{buildroot}%{_bindir}/start%{name} <<EOF
 #!/bin/sh
@@ -108,7 +97,6 @@ EOF
 %files -f %{name}.lang
 %doc AUTHORS CHANGELOG README
 %{_bindir}/*
-%config(noreplace) %{_sysconfdir}/X11/wmsession.d/26%{name}
 %dir %{_sysconfdir}/xdg/%{name}
 %config(noreplace) %{_sysconfdir}/xdg/%{name}/*
 %{_libexecdir}/openbox-autostart

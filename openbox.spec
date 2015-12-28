@@ -1,4 +1,4 @@
-%define major 29
+%define major 32
 %define obtmajor 2
 %define libobrender %mklibname obrender %{major}
 %define libobt %mklibname obt %{obtmajor}
@@ -66,6 +66,7 @@ GNOME session support for %{name}.
 Summary:	Libraries from openbox
 Group:		System/Libraries
 Obsoletes:	%{_lib}openbox27 < 3.5.0-8
+Obsoletes:	%{_lib}openbox29 < 3.6.1-1
 
 %description -n %{libobrender}
 This package contains a shared library for %{name}.

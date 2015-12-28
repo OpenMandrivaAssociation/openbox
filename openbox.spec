@@ -19,7 +19,7 @@ Patch1:		openbox-3.5.2-unused-libs.patch
 Source1:	http://box-look.org/CONTENT/content-files/145240-Oxynew.obt
 # (tpg) breeze theme
 #http://box-look.org/content/show.php/Mistral+%28Updated%29?content=167604
-Source2:	mistral_openbox_by_phobi4n-d8ztvoc.7z
+Source2:	mistral_openbox_by_phobi4n-d8ztvoc.tar.xz
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libstartup-notification-1.0)
@@ -32,8 +32,6 @@ BuildRequires:	pkgconfig(xcursor)
 BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	pkgconfig(sm)
-# (tpg) needed for Source2
-BuildRequires:	p7zip
 Requires:	xsetroot
 Suggests:	obconf
 

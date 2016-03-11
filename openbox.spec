@@ -7,7 +7,7 @@
 Summary:	Windowmanager based on the original blackbox-code
 Name:		openbox
 Version:	3.6.1
-Release:	1
+Release:	2
 Group:		Graphical desktop/Other
 License:	BSD
 Url:		http://openbox.org/

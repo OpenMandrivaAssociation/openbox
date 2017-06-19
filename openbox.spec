@@ -7,13 +7,14 @@
 Summary:	Windowmanager based on the original blackbox-code
 Name:		openbox
 Version:	3.6.1
-Release:	5
+Release:	6
 Group:		Graphical desktop/Other
 License:	BSD
 Url:		http://openbox.org/
 Source0:	http://openbox.org/dist/openbox/%{name}-%{version}.tar.xz
 Patch0:		openbox-3.5.0-mandriva_customisation.patch
 Patch1:		openbox-3.5.2-unused-libs.patch
+Patch2:		openbox-3.6.1-default-apps.patch
 # oxygen-theme here:
 # http://box-look.org/content/show.php?content=145240
 Source1:	http://box-look.org/CONTENT/content-files/145240-Oxynew.obt
@@ -33,7 +34,7 @@ BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	pkgconfig(sm)
 Requires:	xsetroot
-Suggests:	obconf
+Suggests:	obconf-qt
 
 %description
 Openbox is a window manager for the X11 windowing system.

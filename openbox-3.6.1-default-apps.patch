@@ -1,0 +1,219 @@
+--- openbox-3.6.1/data/gnome-wm-properties/openbox.desktop.omv~	2017-06-19 15:14:59.562663551 +0200
++++ openbox-3.6.1/data/gnome-wm-properties/openbox.desktop	2017-06-19 15:15:05.137535656 +0200
+@@ -7,7 +7,7 @@ Exec=openbox
+ X-GNOME-WMName=Openbox
+ 
+ # our config tool
+-ConfigExec=obconf
++ConfigExec=obconf-qt
+ 
+ [Window Manager]
+ SessionManaged=true
+--- openbox-3.6.1/data/menu.xml.omv~	2017-06-19 15:15:13.156351682 +0200
++++ openbox-3.6.1/data/menu.xml	2017-06-19 15:20:40.596828714 +0200
+@@ -5,7 +5,7 @@
+ <menu id="apps-accessories-menu" label="Accessories">
+   <item label="Calculator">
+     <action name="Execute">
+-      <command>gnome-calculator</command>
++      <command>kcalc</command>
+       <startupnotify>
+         <enabled>yes</enabled>
+       </startupnotify>
+@@ -13,7 +13,7 @@
+   </item>
+   <item label="Character Map">
+     <action name="Execute">
+-      <command>gnome-character-map</command>
++      <command>kcharselect</command>
+       <startupnotify>
+         <enabled>yes</enabled>
+       </startupnotify>
+@@ -75,6 +75,14 @@
+ </menu>
+ 
+ <menu id="apps-term-menu" label="Terminals">
++  <item label="QTerminal">
++    <action name="Execute">
++      <command>qterminal</command>
++      <startupnotify>
++        <enabled>yes</enabled>
++      </startupnotify>
++    </action>
++  </item>
+   <item label="Rxvt Unicode">
+     <action name="Execute">
+       <command>urxvt</command>
+@@ -119,6 +127,22 @@
+       </startupnotify>
+     </action>
+   </item>
++  <item label="Qupzilla">
++    <action name="Execute">
++      <command>qupzilla</command>
++      <startupnotify>
++        <enabled>yes</enabled>
++      </startupnotify>
++    </action>
++  </item>
++  <item label="Chromium">
++    <action name="Execute">
++      <command>chromium-browser-stable</command>
++      <startupnotify>
++        <enabled>yes</enabled>
++      </startupnotify>
++    </action>
++  </item>
+   <item label="Opera">
+     <action name="Execute">
+       <command>opera</command>
+@@ -160,6 +184,22 @@
+       </startupnotify>
+     </action>
+   </item>
++  <item label="KVIrc">
++    <action name="Execute">
++      <command>kvirc</command>
++      <startupnotify>
++        <enabled>yes</enabled>
++      </startupnotify>
++    </action>
++  </item>
++  <item label="Konversation">
++    <action name="Execute">
++      <command>konversation</command>
++      <startupnotify>
++        <enabled>yes</enabled>
++      </startupnotify>
++    </action>
++  </item>
+   <item label="XChat">
+     <action name="Execute">
+       <command>xchat</command>
+@@ -171,39 +211,39 @@
+ </menu>
+ 
+ <menu id="apps-office-menu" label="Office">
+-  <item label="OpenOffice Base">
++  <item label="LibreOffice Base">
+     <action name="Execute">
+-      <command>ooffice -base</command>
++      <command>loffice -base</command>
+     </action>
+   </item>
+-  <item label="OpenOffice Calc">
++  <item label="LibreOffice Calc">
+     <action name="Execute">
+-      <command>ooffice -calc</command>
++      <command>localc</command>
+     </action>
+   </item>
+-  <item label="OpenOffice Draw">
++  <item label="LibreOffice Draw">
+     <action name="Execute">
+-      <command>ooffice -draw</command>
++      <command>loffice -draw</command>
+     </action>
+   </item>
+-  <item label="OpenOffice Impress">
++  <item label="Libreoffice Impress">
+     <action name="Execute">
+-      <command>ooffice -impress</command>
++      <command>limpress</command>
+     </action>
+   </item>
+-  <item label="OpenOffice Math">
++  <item label="LibreOffice Math">
+     <action name="Execute">
+-      <command>ooffice -math</command>
++      <command>loffice -math</command>
+     </action>
+   </item>
+-  <item label="OpenOffice Printer Administration">
++  <item label="LibreOffice Printer Administration">
+     <action name="Execute">
+-      <command>ooffice-printeradmin</command>
++      <command>loffice-printeradmin</command>
+     </action>
+   </item>
+-  <item label="OpenOffice Writer">
++  <item label="LibreOffice Writer">
+     <action name="Execute">
+-      <command>ooffice -writer</command>
++      <command>loffice -writer</command>
+     </action>
+   </item>
+ </menu>
+@@ -235,7 +275,7 @@
+   </item>
+   <item label="MPlayer">
+     <action name="Execute">
+-      <command>gmplayer</command>
++      <command>smplayer</command>
+       <startupnotify>
+         <enabled>yes</enabled>
+         <wmclass>MPlayer</wmclass>
+@@ -253,6 +293,14 @@
+ </menu>
+ 
+ <menu id="apps-fileman-menu" label="File Managers">
++  <item label="Dolphin">
++    <action name="Execute">
++      <command>dolphin</command>
++      <startupnotify>
++        <enabled>yes</enabled>
++      </startupnotify>
++    </action>
++  </item>
+   <item label="Nautilus">
+     <action name="Execute">
+       <command>nautilus --no-desktop --browser</command>
+@@ -288,7 +336,7 @@
+   </item>
+   <item label="PCMan File Manager">
+     <action name="Execute">
+-      <command>pcmanfm</command>
++      <command>pcmanfm-qt</command>
+       <startupnotify>
+         <enabled>yes</enabled>
+       </startupnotify>
+@@ -297,6 +345,14 @@
+ </menu>
+ 
+ <menu id="apps-graphics-menu" label="Graphics">
++  <item label="Krita">
++    <action name="Execute">
++      <command>krita</command>
++      <startupnotify>
++        <enabled>yes</enabled>
++      </startupnotify>
++    </action>
++  </item>
+   <item label="Gimp">
+     <action name="Execute">
+       <command>gimp</command>
+@@ -334,19 +390,19 @@
+ <menu id="system-menu" label="System">
+   <item label="Openbox Configuration Manager">
+     <action name="Execute">
+-      <command>obconf</command>
++      <command>obconf-qt</command>
+       <startupnotify><enabled>yes</enabled></startupnotify>
+     </action>
+   </item>
+-  <item label="Gnome Control Center">
++  <item label="KDE System Settings">
+     <action name="Execute">
+-      <command>gnome-control-center</command>
++      <command>systemsettings5</command>
+       <startupnotify><enabled>yes</enabled></startupnotify>
+     </action>
+   </item>
+-  <item label="KDE Control Center">
++  <item label="Gnome Control Center">
+     <action name="Execute">
+-      <command>kcontrol</command>
++      <command>gnome-control-center</command>
+       <startupnotify><enabled>yes</enabled></startupnotify>
+     </action>
+   </item>

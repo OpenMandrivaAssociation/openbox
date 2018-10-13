@@ -7,7 +7,7 @@
 Summary:	Windowmanager based on the original blackbox-code
 Name:		openbox
 Version:	3.6.1
-Release:	7
+Release:	8
 Group:		Graphical desktop/Other
 License:	BSD
 Url:		http://openbox.org/
@@ -92,16 +92,16 @@ This package includes the development files for %{name}.
 
 %prep
 %setup -q -a1 -a2
-%apply_patches
+%autopatch -p1
 autoreconf -fi
 2to3 -w data/autostart/openbox-xdg-autostart tools/themeupdate/themeupdate.py
 
 %build
 %configure --disable-static
-%make DEFAULT_MENU=%{_sysconfdir}/xdg/openbox/menu.xml
+%make_build DEFAULT_MENU=%{_sysconfdir}/xdg/openbox/menu.xml
 
 %install
-%makeinstall_std
+%make_install
 
 # (tpg) Oxygen theme
 mkdir -p %{buildroot}%{_datadir}/themes/oxygen/openbox-3/

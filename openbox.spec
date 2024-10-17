@@ -12,7 +12,7 @@ Version:	3.6.1
 Release:	11
 Group:		Graphical desktop/Other
 License:	BSD
-Url:		http://openbox.org/
+Url:		https://openbox.org/
 Source0:	http://openbox.org/dist/openbox/%{name}-%{version}.tar.xz
 # oxygen-theme here:
 # http://box-look.org/content/show.php?content=145240

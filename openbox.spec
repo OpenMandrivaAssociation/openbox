@@ -13,12 +13,12 @@ Release:	11
 Group:		Graphical desktop/Other
 License:	BSD
 Url:		https://openbox.org/
-Source0:	http://openbox.org/dist/openbox/%{name}-%{version}.tar.xz
+Source0:	https://openbox.org/dist/openbox/%{name}-%{version}.tar.xz
 # oxygen-theme here:
 # http://box-look.org/content/show.php?content=145240
-Source1:	http://box-look.org/CONTENT/content-files/145240-Oxynew.obt
+Source1:	https://box-look.org/CONTENT/content-filesi/145240-Oxynew.obt
 # (tpg) breeze theme
-#http://box-look.org/content/show.php/Mistral+%28Updated%29?content=167604
+#https://box-look.org/content/show.php/Mistral+%28Updated%29?content=167604
 Source2:	mistral_openbox_by_phobi4n-d8ztvoc.tar.xz
 Patch0:		openbox-3.5.2-unused-libs.patch
 Patch1:		openbox-3.6.1-default-apps.patch

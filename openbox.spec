@@ -23,6 +23,11 @@ Source2:	mistral_openbox_by_phobi4n-d8ztvoc.tar.xz
 Patch0:		openbox-3.5.2-unused-libs.patch
 Patch1:		openbox-3.6.1-default-apps.patch
 Patch100:	openbox-3.5.0-openmandriva_customisation.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libstartup-notification-1.0)
